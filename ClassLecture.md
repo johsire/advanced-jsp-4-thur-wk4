@@ -18,11 +18,10 @@ let closure2 = (3);
 // console.log(closure2());
 // console.log(closure());
 
-
 // Answer below, what is the definition of a closure?
 
 // PRACTICE
-// -------- 
+// --------
 // Create an order tracker at a sandwich shop.
 
 // outer function -- no parameters
@@ -41,9 +40,8 @@ let mySandwich = outer();
 // console.log(mySandwich('tomamtoes'));
 
 // Module Pattern
-// -------------- 
+// --------------
 // public and private methods and variables. Can help to shield parts of code from the global scope.
-
 
 function modulePattern() {
   
@@ -65,9 +63,8 @@ function modulePattern() {
 
 let module1 = modulePattern();
 
-
 // PRACTICE
-// -------- 
+// --------
 // Using closure and the module pattern, create a "bank".
 // private -- the balance
 // public -- making a deposit, withdrawl, getting your balance
@@ -93,7 +90,6 @@ console.log(myBankAcct.addBalance(5000000))
 console.log(myBankAcct.realBalance());
 console.log(myBankAcct.withdrawlBalance(10));
 
-
 // What are the benefits of using closures and/or the module pattern?
 
 // =======
@@ -104,15 +100,15 @@ console.log(myBankAcct.withdrawlBalance(10));
 // Think of 'this' as a placeholder for an object.
 
 // this is how we give 'this' meaning when we invoke a function that is using the 'this' keyword:
-// explicit 
+// explicit
 // implicit
-// default 
+// default
 
 // EXPLICIT context
 // ----------------
 // .bind()
 // function.bind(thisArg[, arg1[, arg2[, ...]]])
-// returns a new function 
+// returns a new function
 
 function bindThisFunction() {
   return this
@@ -136,9 +132,8 @@ let bound2 = bindThisFunction.bind(value2)
 // when we use .bind, we are "attaching" the object to the 'this' keyword
 // whatever you pass into the .bind will be the value of the 'this' keyword
 
-
 // PRACTICE
-// -------- 
+// --------
 
 // Use the bind method and the getName function so that 'name' will be equal to a function that will return 'chris'.
 
@@ -151,15 +146,13 @@ let user = {
   age: 36
 };
 
-
 // .call() & .apply() immediately invokes the function with the context
-// - call: argument list 
+// - call: argument list
 // - apply: array of arguments
-
 
 // IMPLICIT context
 // ----------------
-// Whatever is left of the dot 
+// Whatever is left of the dot
 // it will look to see if there is an object left of the dot, if there is, it will assume that that is the object you are looking for. It will replace 'this' with references to the object left of the dot.
 
 let implicit1 = {
@@ -170,11 +163,10 @@ let implicit1 = {
 }
 
 // dot notation --->>> objects
-// 'this' is a placeholder for an object 
+// 'this' is a placeholder for an object
 // the function is trying to find the object that will take the place of 'this'
 
 // implicit1.add() // what will be the value of this function call?
-
 
 let implicit2 = {
   num: 1,
@@ -186,7 +178,7 @@ let implicit2 = {
 // implicit2.add() // what about this?
 
 // PRACTICE
-// -------- 
+// --------
 
 function sayHello() {
   return this.greeting;
@@ -217,14 +209,14 @@ let user2 = {
 
 user2.returnName();
 
-
-// DEFAULT context 
+// DEFAULT context
 // ---------------
-// AVOID DEFAULT CONTEXT!! it's the last resort and more often than not, what you DON'T want to happen 
+// AVOID DEFAULT CONTEXT!! it's the last resort and more often than not, what you DON'T want to happen
+
 // - the window or global object
 // "use strict" ensures 'this' will be undefined when implicit or explicit context is not used.
 
-// ------ 
+// ------
 
 let dog = {
   color: 'white',
@@ -248,14 +240,11 @@ let newDog = {
 // description() // What will be the value of this function call?
 // dog object;
 
-
 // How can we fix this problem?
-
 
 // Arrow functions and 'this'
 // -------------------------
 // 'this' gains it's value from the surrounding lexical context of where the arrow function was declared.
-
 
 // PRACTICE!
 // ---------
@@ -270,7 +259,6 @@ let obj = {
 
 // console.log(obj.b())
 
-
 let obj2 = {
   a: 'letter a',
   b: () => {
@@ -280,7 +268,7 @@ let obj2 = {
 
 // console.log(obj2.b())
 
-// arrow functions don't contain their own binding to the 'this' keyword, they look to the surrounding scope/lexical enviroment. 
+// arrow functions don't contain their own binding to the 'this' keyword, they look to the surrounding scope/lexical enviroment.
 // hey, I don't know what 'this' is, what is 'this' for you?
 
 // Why do arrow functions in the JSX of a react class component's render method give the correct context?
@@ -288,10 +276,10 @@ let obj2 = {
 // Why does using .bind() in the constructor method of a react class component give the correct of this?
 
 // =====================
-// CONSTRUCTOR FUNCTIONS 
+// CONSTRUCTOR FUNCTIONS
 // =====================
 
-// Class review 
+// Class review
 
 class Hat {
   constructor() {
@@ -305,7 +293,7 @@ class Hat {
 
 // Constructor Functions:
 // DO NOT RETURN ANYTHING
-// the new keyword/operator will create the new object for you and the return of that object is done for you 
+// the new keyword/operator will create the new object for you and the return of that object is done for you
 
 function ConstructorName() {
   this.propertyName = 'value'
@@ -326,9 +314,8 @@ The constructor function returs it for you, so you dont have to - it beats the w
 let constructorObj = new ConstructorName('valuess');
 console.log(constructorObj)
 
-
-// PRACTICE 
-// -------- 
+// PRACTICE
+// --------
 function Constructor() {
   // console.log(this); // what would by the value of 'this'?
   this.a = 'the letter a';
@@ -341,9 +328,8 @@ let letter2 = Constructor()
 // console.log(letter) // what will this log?
 // console.log(letter2) // what will this log?
 
-
 // ==========
-// PROTOTYPES 
+// PROTOTYPES
 // ==========
 
 PROTOTYPE:
@@ -351,6 +337,7 @@ every obj has a prototype Obj inbuild.
 Every new objects created will look up to the prototype for the inbuid methods.
 That's the inbuid methods that come with the constructor obj.
 
+Dont override pre-existing prototypes!!
 
 // with classes
 
@@ -382,8 +369,31 @@ Array.prototype.myMethod = function() {
   return 'mine'
 }
 
-// DO NOT DO THIS BELOW 
+// DO NOT DO THIS BELOW
 
 // Array.prototype.map = function() {
 //   return 'mine'
 // }
+
+<!-- Crate a constructor function that makes a person object => 3 properties: name, age, hometown
+add a prototype method that will say the name of the person, name it sayName
+create a person with the constructor function -->
+
+function greetings(name, age, hometown) {
+  this.name = name;
+  this.age = age;
+  this.hometown = hometown;
+}
+
+greetings.prototype.sayName = function() {
+  console.log(this.name)
+}
+
+let mirriamJay = new Greetings('Miriam Jay', 25, 'SLC')
+
+console.log(mirriamJay)
+
+<!-- What is a closure?
+What is the module pattern?
+What are the 3 ways to determine content in or priority?
+How is 'this' defined from an arrow function? -->
