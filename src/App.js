@@ -35,10 +35,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      {/* arror function adopts the parents scope/context/ to find the context of defination of this key word */}
+       <button onClick={this.someFunction()}>Click Me</button>
+       {/* <button onClick={this.increaseNumClosure()}>Click Me</button>
        <button onClick={this.increaseNumClosure()}>Click Me</button>
-       <button onClick={this.increaseNumClosure()}>Click Me</button>
-       <button onClick={this.increaseNumClosure()}>Click Me</button>
-       <button onClick={this.increaseNumClosure()}>Click Me</button>
+       <button onClick={this.increaseNumClosure()}>Click Me</button> */}
       </div>
     );
   }
