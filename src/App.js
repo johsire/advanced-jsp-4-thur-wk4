@@ -8,23 +8,30 @@ class App extends Component {
     this.state = {
       num: 0
     }
-    this.increaseNum = this.increaseNum.bind(this)
+    // this.increaseNum = this.increaseNum.bind(this)
+    this.someFunction = this.someFunction.bind(this)
   }
 
-  increaseNum() {
+  someFunction() {
     this.setState({
       num: this.state.num + 1
     })
-    alert(this.state.num)
-  }
+  };
 
-  increaseNumClosure() {
-    let num = 0
-    return function() {
-      num ++
-      alert (num);
-    }
-  }
+  // increaseNum() {
+  //   this.setState({
+  //     num: this.state.num + 1
+  //   })
+  //   alert(this.state.num)
+  // }
+
+  // increaseNumClosure() {
+  //   let num = 0
+  //   return function() {
+  //     num ++
+  //     alert (num);
+  //   }
+  // }
   render() {
     return (
       <div className="App">
