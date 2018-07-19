@@ -316,6 +316,22 @@ function ConstructorName() {
 
 console.log(new ConstructorName())
 
+class are constructor functions in disguise - syntaxtical sugar
+Have to use a capital letter when defining a new constructor function
+
+The new key word creates a new istance of the object.
+The this key world refrences the new obj you just created
+The constructor function returs it for you, so you dont have to - it beats the whole purpose to return something.
+
+let constructorObj = new ConstructorName('valuess');
+console.log(constructorObj)
+
+
+PROTOTYPE:
+every obj has a prototype Obj inbuild.
+Every new objects created will look up to the prototype for the inbuid methods.
+That's the inbuid methods that come with the constructor obj.
+
 
 // PRACTICE 
 // -------- 
