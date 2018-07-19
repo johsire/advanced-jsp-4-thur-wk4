@@ -327,12 +327,6 @@ let constructorObj = new ConstructorName('valuess');
 console.log(constructorObj)
 
 
-PROTOTYPE:
-every obj has a prototype Obj inbuild.
-Every new objects created will look up to the prototype for the inbuid methods.
-That's the inbuid methods that come with the constructor obj.
-
-
 // PRACTICE 
 // -------- 
 function Constructor() {
@@ -351,6 +345,11 @@ let letter2 = Constructor()
 // ==========
 // PROTOTYPES 
 // ==========
+
+PROTOTYPE:
+every obj has a prototype Obj inbuild.
+Every new objects created will look up to the prototype for the inbuid methods.
+That's the inbuid methods that come with the constructor obj.
 
 
 // with classes
